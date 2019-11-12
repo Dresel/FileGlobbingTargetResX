@@ -1,0 +1,13 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <Target Name="MyTask" BeforeTargets="PrepareForBuild">
+    <ItemGroup>
+      <EmbeddedResource Include="..\assets\*.*" LogicalFileName="%(FileName)%(Extension)" />
+    </ItemGroup>
+  </Target>
+
+</Project>
