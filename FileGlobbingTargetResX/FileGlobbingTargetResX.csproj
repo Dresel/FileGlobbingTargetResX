@@ -6,7 +6,7 @@
 
   <Target Name="MyTask" BeforeTargets="PrepareForBuild">
     <ItemGroup>
-      <EmbeddedResource Include="..\assets\*.*" LogicalFileName="%(FileName)%(Extension)" />
+      <EmbeddedResource Include="..\assets\*.*" LogicalName="%(FileName)%(Extension)" />
     </ItemGroup>
   </Target>
 
