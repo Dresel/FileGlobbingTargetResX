@@ -6,9 +6,9 @@
 
   <Target Name="MyTask" BeforeTargets="PrepareForBuild">
     <ItemGroup>
-      <EmbeddedResource Include="..\assets\*.*" />
+      <EmbeddedResource Include="..\assets\*.*" UpdateLogicalName="true" />
       <!-- Work around https://github.com/microsoft/msbuild/issues/1053: set this after item creation. -->
-      <EmbeddedResource LogicalName="%(FileName)%(Extension)" />
+      <EmbeddedResource LogicalName="Resource%(FileName)%(Extension)" Condition="'%(EmbeddedResource.UpdateLogicalName)' == 'true'" />
     </ItemGroup>
   </Target>
 
